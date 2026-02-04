@@ -33,6 +33,7 @@ html {
   align-items: center;
   background-color: var(--color-blue-600);
   position: relative;
+  overflow: hidden;
 }
 
 .container::before {
