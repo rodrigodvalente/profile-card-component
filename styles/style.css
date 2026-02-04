@@ -1,26 +1,184 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap");
 
 html {
-    font-family: "Kumbh Sans", sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
-:root{
-    --color-card: #fff;
-    --color-gray-500: #6B7082;
-    --color-gray-100: #E8E9EC;
-    --color-blue-600: #19A1AE;
-    --color-blue-400: #41CBD3;
-    --color-navy-950: #2E3349;
-    --gradient-1: linear-gradient(#53FFEE, #0989B4)
-    --font-size-1: 1.125rem;
-    --font-size-2: .875rem;
-    --font-size-3: .625rem;
-    --line-height-1: 125%;
-    --letter-spacing-1: 1.5px;
-    --font-weight-1: 700;
-    --font-weight-2: 400;
-    --spacing-100: .5rem;
-    --spacing-200: 1rem;
-    --spacing-300: 1.5rem;
-    --spacing-700: 3.5rem;
+:root {
+  --color-card: #fff;
+  --color-gray-500: #6b7082;
+  --color-gray-100: #e8e9ec;
+  --color-blue-600: #19a1ae;
+  --color-blue-400: #41cbd3;
+  --color-navy-950: #2e3349;
+  --gradient-1: linear-gradient(#53ffee, #0989b4);
+  --font-size-1: 1.125rem;
+  --font-size-2: 0.875rem;
+  --font-size-3: 0.625rem;
+  --line-height-1: 125%;
+  --letter-spacing-1: 1.5px;
+  --font-weight-1: 700;
+  --font-weight-2: 400;
+  --spacing-100: 0.5rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-700: 3.5rem;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-blue-600);
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  height: 622px;
+  width: 622px;
+  top: -300px;
+  left: -300px;
+  background: url("../assets/bg-pattern-top.svg") no-repeat top left / contain;
+  z-index: 1;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  height: 622px;
+  width: 622px;
+  bottom: -300px;
+  right: -300px;
+  background: url("../assets/bg-pattern-bottom.svg") no-repeat bottom right /
+    contain;
+}
+
+.card__box {
+  width: 326px;
+  margin: 0 auto;
+  border-radius: 1rem 1rem 1rem 1rem;
+  background-color: var(--color-card);
+  z-index: 100;
+}
+
+.card__pattern {
+  background-image: url("../assets/bg-pattern-card.svg");
+  height: 144px;
+  border-radius: 1rem 1rem 0 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.profile__image {
+  height: 96px;
+  width: 96px;
+  align-self: center;
+  border-radius: 50%;
+  border: 5px solid var(--color-card);
+  position: absolute;
+  align-self: flex-end;
+  bottom: -53px;
+}
+
+.card__content {
+  margin-top: calc(53px + var(--spacing-200));
+}
+
+.person__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-200);
+}
+
+.profile__name,
+.stats__number {
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-1);
+  color: var(--color-navy-950);
+  line-height: var(--line-height-1);
+}
+
+.profile__age {
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-2);
+  line-height: var(--line-height-1);
+  color: var(--color-gray-500);
+}
+
+.profile__location {
+  margin-top: var(--spacing-100);
+  font-weight: var(--font-weight-2);
+  font-size: var(--font-size-2);
+  color: var(--color-gray-500);
+  line-height: var(--line-height-1);
+}
+
+.stats__section {
+  margin-top: var(--spacing-300);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: var(--spacing-300);
+  border-top: 1px solid var(--color-gray-100);
+}
+
+.stats__description {
+  color: var(--color-gray-500);
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-2);
+  line-height: var(--line-height-1);
+  letter-spacing: var(--letter-spacing-1);
+  margin-top: var(--spacing-100);
+}
+
+@media (min-width: 700px) {
+  .card__box {
+    width: 350px;
+  }
+
+  .container::before,
+  .container::after {
+    width: 978px;
+    height: 978px;
+  }
+
+  .container::before {
+    top: -500px;
+    left: -500px;
+  }
+
+  .container::after {
+    bottom: -500px;
+    right: -500px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container::before,
+  .container::after {
+    width: 978px;
+    height: 978px;
+  }
+
+  .container::before {
+    top: -500px;
+    left: -50px;
+  }
+
+  .container::after {
+    bottom: -500px;
+    right: -50px;
+  }
 }
